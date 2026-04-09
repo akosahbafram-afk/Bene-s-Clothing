@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FashionVault – Categories</title>
+  <link rel="stylesheet" href="categories.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BREADCRUMB BAR -->
+  <div class="breadcrumb-bar">
+    <button class="icon-btn back-btn" onclick="history.back()" aria-label="Back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    </button>
+    <span class="breadcrumb-label">Categories</span>
+  </div>
+
+  <!-- MAIN NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo-icon">🏠</span>
+      <span class="logo-text">Home</span>
+    </div>
+    <div class="search-wrap">
+      <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="text" id="searchInput" placeholder="Search on Bene's clothing" />
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <div class="avatar">B</div>
+    </div>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <div class="page-header">
+    <h1 class="page-title">Categories</h1>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filter-wrap">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="tab active" data-filter="all">All products</button>
+      <button class="tab" data-filter="men">Men</button>
+      <button class="tab" data-filter="women">Women's Casual wear</button>
+      <button class="tab" data-filter="kids">Kids</button>
+    </div>
+    <button class="tab-arrow" aria-label="More">›</button>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <section class="products-section">
+    <div class="product-grid" id="productGrid">
+
+      <!-- MEN -->
+      <div class="product-card" data-category="men" data-name="men's suit">
+        <div class="card-img-wrap">
+          <div class="product-img men-img-1"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Men's suit</p>
+          <p class="product-price">$150</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="men" data-name="men's casual wear">
+        <div class="card-img-wrap">
+          <div class="product-img men-img-2"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Men's casual wear</p>
+          <p class="product-price">$130</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="men" data-name="men's wear">
+        <div class="card-img-wrap">
+          <span class="badge-sale">Sale</span>
+          <div class="product-img men-img-3"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Men's wear</p>
+          <p class="product-price">$180</p>
+        </div>
+      </div>
+
+      <!-- WOMEN -->
+      <div class="product-card" data-category="women" data-name="lady's wear">
+        <div class="card-img-wrap">
+          <div class="product-img women-img-1"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Lady's wear</p>
+          <div class="price-row">
+            <span class="old-price">$200</span>
+            <span class="new-price">$160</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="women" data-name="lady's casual wear">
+        <div class="card-img-wrap">
+          <div class="product-img women-img-2"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Lady's casual wear</p>
+          <div class="price-row">
+            <span class="old-price">$180</span>
+            <span class="new-price">$140</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="women" data-name="lady's casual wear floral">
+        <div class="card-img-wrap">
+          <div class="product-img women-img-3"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Lady's casual wear</p>
+          <p class="product-price">$190</p>
+        </div>
+      </div>
+
+      <!-- KIDS -->
+      <div class="product-card" data-category="kids" data-name="kid's wear tutu">
+        <div class="card-img-wrap">
+          <div class="product-img kids-img-1"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Kid's wear</p>
+          <p class="product-price">$80</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="kids" data-name="kid's wear casual">
+        <div class="card-img-wrap">
+          <div class="product-img kids-img-2"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Kid's wear</p>
+          <p class="product-price">$78</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="kids" data-name="kid's wear print">
+        <div class="card-img-wrap">
+          <div class="product-img kids-img-3"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Kid's wear</p>
+          <p class="product-price">$85</p>
+        </div>
+      </div>
+
+    </div>
+    <p class="no-results" id="noResults" style="display:none;">No items found.</p>
+  </section>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#" class="bottom-nav-item active">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span>Categories</span>
+    </a>
+    <a href="#" class="bottom-nav-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span>Cart</span>
+    </a>
+    <a href="#" class="bottom-nav-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Profile</span>
+    </a>
+  </nav>
+
+  <script src="categories.js"></script>
+</body>
+</html>

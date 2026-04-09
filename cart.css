@@ -1,0 +1,55 @@
+body {
+    background: #f3f4f6;
+    font-family: "Poppins", sans-serif;
+}
+
+/* EMPTY CART */
+.empty-cart {
+    text-align: center;
+    padding: 30px;
+}
+
+.cart-icon {
+    font-size: 50px;
+    color: #ff7a00;
+}
+
+.empty-cart button {
+    background: #ff7a00;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 15px;
+}
+
+/* ITEMS */
+.item {
+    display: flex;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    gap: 10px;
+}
+
+.item img {
+    width: 60px;
+    border-radius: 8px;
+}
+
+/* TOTAL */
+.total {
+    padding: 15px;
+    font-weight: bold;
+    text-align: right;
+    color: #ff7a00;
+}
