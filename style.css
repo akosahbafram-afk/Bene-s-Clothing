@@ -374,9 +374,11 @@ body {
   background-image: url('./IMAGES/download\ \(25\).jpeg');
  }
 .women-img-3 { 
-  background-image: url('/IMAGES/EMERY\ ROSE\ 2pcs\ Plus\ Size\ Casual\ Solid\ Dark\ Brown\ Set\,\ Suitable\ For\ Summer\ _\ SHEIN\ USA.jpeg');
+  background-image: url('/IMAGES/20.jpeg');
 }
-.men-img-1   { background: linear-gradient(160deg, #2d5a3d 0%, #1a3a28 100%); }
+.men-img-1   {
+  background-image: url('./IMAGES/download\ \(28\).jpeg');
+ }
 .men-img-2   { background: linear-gradient(160deg, #2a6b8a 0%, #164d65 100%); }
 .men-img-3   { background: linear-gradient(160deg, #2d4a2d 0%, #1a301a 100%); }
 .kids-img-1  { background: linear-gradient(160deg, #d48fa0 0%, #a5627a 100%); }
