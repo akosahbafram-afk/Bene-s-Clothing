@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FashionVault – Cart</title>
-  <link rel="stylesheet" href="cart.css" />
+  <title>FashionVault – Men's Suit</title>
+  <link rel="stylesheet" href="product.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- BREADCRUMB BAR -->
+  <!-- BREADCRUMB -->
   <div class="breadcrumb-bar">
     <button class="icon-btn back-btn" onclick="history.back()" aria-label="Back">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
     </button>
-    <span class="breadcrumb-label">Cart</span>
+    <span class="breadcrumb-label">Product</span>
   </div>
 
-  <!-- MAIN NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <a href="index.html" class="nav-link">
       <span class="nav-icon">🏠</span>
@@ -36,133 +36,126 @@
     </div>
   </nav>
 
-  <!-- PAGE TITLE -->
-  <div class="page-header">
-    <h1 class="page-title">Shopping Cart</h1>
+  <!-- MAIN LAYOUT -->
+  <div class="product-layout">
+
+    <!-- LEFT: IMAGE GALLERY -->
+    <div class="gallery">
+      <div class="main-img-wrap" id="mainImgWrap">
+        <div class="main-img suit-main" id="mainImg"></div>
+        <button class="wishlist-pill" id="wishlistBtn" aria-label="Wishlist">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="thumbnails" id="thumbnails">
+        <button class="thumb active" data-img="suit-main">
+          <div class="thumb-img suit-main"></div>
+        </button>
+        <button class="thumb" data-img="suit-alt1">
+          <div class="thumb-img suit-alt1"></div>
+        </button>
+        <button class="thumb" data-img="suit-alt2">
+          <div class="thumb-img suit-alt2"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT: PRODUCT DETAILS -->
+    <div class="product-details">
+
+      <!-- Title & Badge -->
+      <div class="title-row">
+        <h1 class="product-title">Men's Suit</h1>
+        <span class="popular-badge">popular</span>
+      </div>
+
+      <!-- Rating -->
+      <div class="rating-row">
+        <div class="stars" id="starsDisplay">
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star half">★</span>
+        </div>
+        <span class="rating-text">4.8 <span class="review-count">(53)</span></span>
+      </div>
+
+      <!-- Price -->
+      <div class="price-block">
+        <span class="current-price" id="currentPrice">$120</span>
+        <span class="original-price" id="originalPrice">$150</span>
+      </div>
+
+      <!-- Size Selector -->
+      <div class="option-group">
+        <p class="option-label">Size</p>
+        <div class="size-options" id="sizeOptions">
+          <button class="size-btn" data-size="S">S</button>
+          <button class="size-btn active" data-size="M">M</button>
+          <button class="size-btn" data-size="L">L</button>
+          <button class="size-btn" data-size="XL">XL</button>
+        </div>
+      </div>
+
+      <!-- Quantity + Actions -->
+      <div class="action-row">
+        <div class="qty-control">
+          <button class="qty-btn" id="qtyMinus">−</button>
+          <span class="qty-val" id="qtyVal">1</span>
+          <button class="qty-btn" id="qtyPlus">+</button>
+        </div>
+        <button class="btn-buy" id="buyNowBtn">Buy Now</button>
+        <button class="btn-contact" id="contactBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Contact Us
+        </button>
+      </div>
+
+      <!-- Description -->
+      <div class="description">
+        <p class="desc-text" id="descText">
+          Elegant blue–black men's suit, perfect for business and formal events. Made from high-quality fabrics for a refined look.
+        </p>
+        <button class="read-more" id="readMore">Read more</button>
+      </div>
+
+      <!-- Features -->
+      <ul class="features-list">
+        <li class="feature-item">
+          <span class="feature-icon">⭐</span>
+          <div>
+            <p class="feature-title">High Quality Fabrics</p>
+            <p class="feature-sub">Crafted from premium materials for a luxurious feel</p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon">🚚</span>
+          <div>
+            <p class="feature-title">Fast Delivery</p>
+            <p class="feature-sub">Get your order delivered quickly and reliably</p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon">🔄</span>
+          <div>
+            <p class="feature-title">Easy Returns</p>
+            <p class="feature-sub">30-day hassle-free return policy</p>
+          </div>
+        </li>
+      </ul>
+
+    </div>
   </div>
 
-  <!-- EMPTY CART STATE -->
-  <section class="empty-cart" id="emptyCart">
-    <div class="cart-icon-wrap">
-      <svg class="cart-svg" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 10H25L38 62H88L100 28H32" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="48" cy="80" r="8" stroke="#1a1a2e" stroke-width="5"/>
-        <circle cx="78" cy="80" r="8" stroke="#1a1a2e" stroke-width="5"/>
-      </svg>
+  <!-- STICKY BOTTOM BAR -->
+  <div class="sticky-bar">
+    <button class="sticky-buy" id="stickyBuy">Buy Now</button>
+    <div class="sticky-contact">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>0530211911</span>
     </div>
-    <h2 class="empty-title">Your cart is empty</h2>
-    <p class="empty-sub">Browse our categories and discover our<br>best deals</p>
-    <a href="categories.html" class="btn-shop">Start Shopping</a>
-  </section>
-
-  <!-- CART ITEMS (hidden when empty) -->
-  <section class="cart-items-section" id="cartItemsSection" style="display:none;">
-    <div class="cart-items-list" id="cartItemsList"></div>
-
-    <!-- ORDER SUMMARY -->
-    <div class="order-summary">
-      <h3 class="summary-title">Order Summary</h3>
-      <div class="summary-row">
-        <span>Subtotal</span>
-        <span id="subtotal">$0.00</span>
-      </div>
-      <div class="summary-row">
-        <span>Shipping</span>
-        <span class="free-tag">FREE</span>
-      </div>
-      <div class="summary-row total-row">
-        <span>Total</span>
-        <span id="totalPrice">$0.00</span>
-      </div>
-      <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
-    </div>
-  </section>
-
-  <!-- RECENTLY VIEWED -->
-  <section class="recent-section">
-    <h2 class="section-title">Recently Viewed</h2>
-    <div class="product-grid" id="recentGrid">
-
-      <div class="product-card" data-name="lady's wear" data-price="146" data-category="women">
-        <div class="card-img-wrap">
-          <div class="product-img women-img-1"></div>
-          <button class="cart-fab" aria-label="Add to cart">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </button>
-        </div>
-        <div class="card-info">
-          <p class="product-name">Lady's wear</p>
-          <p class="product-price">$146</p>
-        </div>
-      </div>
-
-      <div class="product-card" data-name="men's casual wear" data-price="140" data-category="men">
-        <div class="card-img-wrap">
-          <div class="product-img men-img-1"></div>
-          <button class="cart-fab" aria-label="Add to cart">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </button>
-        </div>
-        <div class="card-info">
-          <p class="product-name">Men's casual wear</p>
-          <p class="product-price">$140</p>
-        </div>
-      </div>
-
-      <div class="product-card" data-name="lady's wear pink" data-price="150" data-category="women">
-        <div class="card-img-wrap">
-          <div class="product-img women-img-2"></div>
-          <button class="cart-fab" aria-label="Add to cart">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </button>
-        </div>
-        <div class="card-info">
-          <p class="product-name">Lady's wear</p>
-          <p class="product-price">$150</p>
-        </div>
-      </div>
-
-      <div class="product-card" data-name="kid's wear" data-price="80" data-category="kids">
-        <div class="card-img-wrap">
-          <div class="product-img kids-img-1"></div>
-          <button class="cart-fab" aria-label="Add to cart">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </button>
-        </div>
-        <div class="card-info">
-          <p class="product-name">Kid's wear</p>
-          <p class="product-price">$80</p>
-        </div>
-      </div>
-
-      <div class="product-card" data-name="men's suit" data-price="120" data-category="men">
-        <div class="card-img-wrap">
-          <div class="product-img men-img-2"></div>
-          <button class="cart-fab" aria-label="Add to cart">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </button>
-        </div>
-        <div class="card-info">
-          <p class="product-name">Men's suit</p>
-          <p class="product-price">$120</p>
-        </div>
-      </div>
-
-      <div class="product-card" data-name="kid's wear print" data-price="85" data-category="kids">
-        <div class="card-img-wrap">
-          <div class="product-img kids-img-2"></div>
-          <button class="cart-fab" aria-label="Add to cart">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </button>
-        </div>
-        <div class="card-info">
-          <p class="product-name">Kid's wear</p>
-          <p class="product-price">$85</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  </div>
 
   <!-- TOAST -->
   <div class="toast" id="toast"></div>
@@ -177,7 +170,7 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       <span>Categories</span>
     </a>
-    <a href="#" class="bottom-nav-item active">
+    <a href="cart.html" class="bottom-nav-item">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
       <span>Cart</span>
     </a>
@@ -187,6 +180,6 @@
     </a>
   </nav>
 
-  <script src="cart.js"></script>
+  <script src="product.js"></script>
 </body>
 </html>

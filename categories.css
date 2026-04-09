@@ -157,7 +157,7 @@ body {
 .avatar {
   width: 32px; height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dk));
+  background-image: url('./IMAGES/download\ \(39\).jpeg');
   color: #fff;
   display: grid;
   place-items: center;
@@ -288,15 +288,33 @@ body {
 .product-card:hover .product-img { transform: scale(1.06); }
 
 /* Colour placeholders */
-.men-img-1   { background: linear-gradient(155deg, #9aa3af 0%, #5a6272 100%); }
-.men-img-2   { background: linear-gradient(155deg, #2d7a4a 0%, #1a4d2e 100%); }
-.men-img-3   { background: linear-gradient(155deg, #2a2a2a 0%, #4a3c30 100%); }
-.women-img-1 { background: linear-gradient(155deg, #c9a87c 0%, #8b6c4f 100%); }
-.women-img-2 { background: linear-gradient(155deg, #d4c4a0 0%, #a89060 100%); }
-.women-img-3 { background: linear-gradient(155deg, #e86a3a 0%, #c04020 100%); }
-.kids-img-1  { background: linear-gradient(155deg, #4a4adb 0%, #2828a0 100%); }
-.kids-img-2  { background: linear-gradient(155deg, #6aabcf 0%, #3878a0 100%); }
-.kids-img-3  { background: linear-gradient(155deg, #e07030 0%, #a04010 100%); }
+.men-img-1   { 
+  background-image: url('./IMAGES/16.jpeg');
+ }
+.men-img-2   { 
+  background-image: url('./IMAGES/23.jpeg'); 
+}
+.men-img-3   { 
+  background-image: url('./IMAGES/8.jpeg'); 
+}
+.women-img-1 { 
+  background-image: url('./IMAGES/25.jpeg'); 
+}
+.women-img-2 { 
+  background-image: url('./IMAGES/download\ \(40\).jpeg');
+ }
+.women-img-3 { 
+  background-image: url('./IMAGES/21.jpeg'); 
+}
+.kids-img-1  { 
+  background-image: url('./IMAGES/4.jpeg'); 
+}
+.kids-img-2  { 
+  background-image: url('./IMAGES/5.jpeg'); 
+}
+.kids-img-3  { 
+  background-image: url('./IMAGES/7.jpeg'); 
+}
 
 /* SALE badge */
 .badge-sale {

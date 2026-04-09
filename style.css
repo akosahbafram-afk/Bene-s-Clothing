@@ -381,16 +381,26 @@ body {
   background-image: url('./IMAGES/download\ \(25\).jpeg');
  }
 .women-img-3 { 
-  background-image: url('/IMAGES/20.jpeg');
+  background-image: url('IMAGES/24.jpeg');
 }
 .men-img-1   {
-  background-image: url('./IMAGES/download\ \(28\).jpeg');
+  background-image: url('./IMAGES/ms.avif');
  }
-.men-img-2   { background: linear-gradient(160deg, #2a6b8a 0%, #164d65 100%); }
-.men-img-3   { background: linear-gradient(160deg, #2d4a2d 0%, #1a301a 100%); }
-.kids-img-1  { background: linear-gradient(160deg, #d48fa0 0%, #a5627a 100%); }
-.kids-img-2  { background: linear-gradient(160deg, #6aabcf 0%, #3a7fa5 100%); }
-.kids-img-3  { background: linear-gradient(160deg, #b5813c 0%, #7c5520 100%); }
+.men-img-2   { 
+  background-image: url('./IMAGES/26.jpeg');
+ }
+.men-img-3   { 
+  background-image: url('./IMAGES/20.jpeg');
+ }
+.kids-img-1  { 
+  background-image: url('./IMAGES/2.jpeg');
+ }
+.kids-img-2  { 
+  background-image: url('./IMAGES/1.jpeg'); 
+}
+.kids-img-3  { 
+  background-image: url('./IMAGES/download.avif');
+ }
 
 .badge {
   position: absolute;

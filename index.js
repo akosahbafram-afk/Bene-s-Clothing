@@ -199,7 +199,6 @@
     }
   `;
   document.head.appendChild(bumpStyle);
-
   /* ════════════════════════════════════════
      10. KEYBOARD: ESC closes search
   ════════════════════════════════════════ */
