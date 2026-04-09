@@ -1,105 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-
-    <link href="product.css" rel="stylesheet" />
-    <script src="product.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FashionVault – Cart</title>
+  <link rel="stylesheet" href="cart.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="nav">
+  <!-- BREADCRUMB BAR -->
+  <div class="breadcrumb-bar">
+    <button class="icon-btn back-btn" onclick="history.back()" aria-label="Back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    </button>
+    <span class="breadcrumb-label">Cart</span>
+  </div>
 
-    <div class="nav-left">
-        <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
-    </div>
-
+  <!-- MAIN NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-link">
+      <span class="nav-icon">🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="categories.html" class="nav-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span>Categories</span>
+    </a>
     <div class="nav-right">
-        <i class="fa-regular fa-heart"></i>
-        <i class="fa-solid fa-share"></i>
+      <button class="icon-btn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <div class="avatar">B</div>
     </div>
+  </nav>
 
- <div class="nav-right">
-        <input type="text" placeholder="Search on Fashion Store">
-        <i class="fa-solid fa-filter"></i>
-        <img src="IMAGES/download (39).jpeg" class="user">
+  <!-- PAGE TITLE -->
+  <div class="page-header">
+    <h1 class="page-title">Shopping Cart</h1>
+  </div>
+
+  <!-- EMPTY CART STATE -->
+  <section class="empty-cart" id="emptyCart">
+    <div class="cart-icon-wrap">
+      <svg class="cart-svg" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 10H25L38 62H88L100 28H32" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="48" cy="80" r="8" stroke="#1a1a2e" stroke-width="5"/>
+        <circle cx="78" cy="80" r="8" stroke="#1a1a2e" stroke-width="5"/>
+      </svg>
     </div>
+    <h2 class="empty-title">Your cart is empty</h2>
+    <p class="empty-sub">Browse our categories and discover our<br>best deals</p>
+    <a href="categories.html" class="btn-shop">Start Shopping</a>
+  </section>
 
-</nav>
+  <!-- CART ITEMS (hidden when empty) -->
+  <section class="cart-items-section" id="cartItemsSection" style="display:none;">
+    <div class="cart-items-list" id="cartItemsList"></div>
 
-<!-- PRODUCT IMAGE -->
-<section class="product-image">
-    <img src="IMAGES/WhatsApp Image 2026-04-07 at 16.30.19 (1).jpeg" class="main-img">
-</section>
-
-<!-- DETAILS -->
-<section class="product-details">
-
-    <h2>Men's Suit</h2>
-
-    <div class="rating">
-        <span>⭐⭐⭐⭐☆</span>
-        <span>4.8</span>
+    <!-- ORDER SUMMARY -->
+    <div class="order-summary">
+      <h3 class="summary-title">Order Summary</h3>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="subtotal">$0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span class="free-tag">FREE</span>
+      </div>
+      <div class="summary-row total-row">
+        <span>Total</span>
+        <span id="totalPrice">$0.00</span>
+      </div>
+      <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
     </div>
+  </section>
 
-    <h3>$120</h3>
+  <!-- RECENTLY VIEWED -->
+  <section class="recent-section">
+    <h2 class="section-title">Recently Viewed</h2>
+    <div class="product-grid" id="recentGrid">
 
-</section>
+      <div class="product-card" data-name="lady's wear" data-price="146" data-category="women">
+        <div class="card-img-wrap">
+          <div class="product-img women-img-1"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Lady's wear</p>
+          <p class="product-price">$146</p>
+        </div>
+      </div>
 
-<!-- SIZE -->
-<section class="sizes">
-    <h4>Select Size</h4>
+      <div class="product-card" data-name="men's casual wear" data-price="140" data-category="men">
+        <div class="card-img-wrap">
+          <div class="product-img men-img-1"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Men's casual wear</p>
+          <p class="product-price">$140</p>
+        </div>
+      </div>
 
-    <div class="size-options">
-        <button>S</button>
-        <button>M</button>
-        <button>L</button>
-        <button>XL</button>
+      <div class="product-card" data-name="lady's wear pink" data-price="150" data-category="women">
+        <div class="card-img-wrap">
+          <div class="product-img women-img-2"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Lady's wear</p>
+          <p class="product-price">$150</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-name="kid's wear" data-price="80" data-category="kids">
+        <div class="card-img-wrap">
+          <div class="product-img kids-img-1"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Kid's wear</p>
+          <p class="product-price">$80</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-name="men's suit" data-price="120" data-category="men">
+        <div class="card-img-wrap">
+          <div class="product-img men-img-2"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Men's suit</p>
+          <p class="product-price">$120</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-name="kid's wear print" data-price="85" data-category="kids">
+        <div class="card-img-wrap">
+          <div class="product-img kids-img-2"></div>
+          <button class="cart-fab" aria-label="Add to cart">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+        <div class="card-info">
+          <p class="product-name">Kid's wear</p>
+          <p class="product-price">$85</p>
+        </div>
+      </div>
+
     </div>
-</section>
+  </section>
 
-<!-- QUANTITY -->
-<section class="quantity">
-    <h4>Quantity</h4>
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
 
-    <div class="qty-box">
-        <button>-</button>
-        <span>1</span>
-        <button>+</button>
-    </div>
-</section>
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="categories.html" class="bottom-nav-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span>Categories</span>
+    </a>
+    <a href="#" class="bottom-nav-item active">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span>Cart</span>
+    </a>
+    <a href="#" class="bottom-nav-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Profile</span>
+    </a>
+  </nav>
 
-<!-- DESCRIPTION -->
-<section class="description">
-    <h4>Description</h4>
-    <p>
-        Elegant blueblack men's suit, perfect for business and formal events.
-        Made from high-quality fabrics for a refinrd look.
-    </p>
-</section>
-
-<!-- FEATURES -->
-<section class="features">
-    <ul>
-        <li>✔ High Quality Fabric</li>
-        <li>✔ Fast Delivery</li>
-    </ul>
-</section>
-
-<!-- ACTIONS -->
-<section class="actions">
-    <button>Buy Now</button>
-    <button>0530211911</button>
-</section>
-
-<!-- EXTRA IMAGES -->
-<section class="extra-images">
-    <img src="IMAGES/WhatsApp Image 2026-04-07 at 16.30.18 (2).jpeg">
-    <img src="IMAGES/WhatsApp Image 2026-04-07 at 16.30.17.jpeg">
-</section>
-
+  <script src="cart.js"></script>
 </body>
 </html>
